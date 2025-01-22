@@ -1,0 +1,209 @@
+/* Estilos generales para pantallas grandes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;700&display=swap');
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+
+
+/* ---------------------------------NAV--------------------------------------- */
+.logo{
+  width: 80px;
+  height: 70px;
+}
+
+.logo2{
+  width: 60px;
+  height: 60px;
+}
+
+.logo5{
+  width: 40px;
+  height: 40px;
+  
+}
+
+
+/* -------------------------BANNER--------------------------------------------------- */
+/* CONTENEDOR PRINCIPAL BANNER */
+.banner{
+  margin: 30vh;
+}
+
+.text2{
+  letter-spacing: 0.15em; /* Más flexible y relativo al tamaño de la fuente */
+  font-size: 3.8rem;
+}
+.textt{
+  letter-spacing: 0.28em; /* Más flexible y relativo al tamaño de la fuente */
+  margin-left: 5px;
+ 
+}
+/* Reducir el interlineado */
+.banner p, .banner li, .banner h1, .banner h2 {
+  line-height: .8; /* Valor menor para un interlineado más pequeño */
+}
+
+
+
+/* ---------------------------MOVIMIENTO AVION------------------------- */
+/* AVION */
+.logo3{
+  width: 200px;
+  height: 200px;
+  animation-name: mianimacion;
+  position: relative;
+  animation-direction: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation: fly 3s linear infinite; /* Repite la animación sin regresar */
+  position: relative;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-350px, 60px); /* Posición inicial */
+  }
+  100% {
+    transform: translate(400px,-150px); /* Posición final */
+  }
+}
+
+
+/* -------------PANTALLA CHICAS PHONE---------------------------------- */
+@media (min-width: 375px) and (max-width: 670px) {
+  .logo{
+    width: 40px;
+    height: 30px;
+    
+  }
+  .logo2{
+    margin-top: -17px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .menux{
+    font-size: 8px !important;
+  }
+  .lista{
+    margin-top: 20px;
+  }
+  
+}
+
+
+
+
+.letras{
+  font-size: 20px;
+}
+.letras2{
+  font-size: 10px;
+}
+.video-containerr {
+  margin-top: 20vh;
+  width: 100%; /* Contenedor ocupa todo el ancho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fondo opcional */
+}
+
+.video-full-width {
+  width: 100%; /* Video ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+.imgcarru{
+  width: 150px;
+  margin: 0 20px;
+  transition: .5s;
+  cursor: pointer;
+} */
+
+
+
+.scrolll{
+  position: relative;
+  display: flex;
+  width: 1200px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+  
+}
+
+.scrolll div{
+  margin-top: 100px;
+  white-space: nowrap;
+  animation: animate 50s linear infinite;
+} 
+
+/* --------------------ANIMACION CARRUSEL-------------------------------------- */
+@keyframes animate {
+  0%{
+      transform: translateX(0);
+  }
+
+  100%{
+      transform: translateX(-100%);
+  }
+}
+
+.scrolll:hover div{
+  animation-play-state: paused;
+}
+
+
+
+/* espacios entre contenedores principales */
+.xdxd, .scrolll,.videocert,.experience,.videocer,.experience2{
+  margin-top: 200px;
+}
+
+
+
+
+.zoom-image {
+  transition: transform 0.3s ease; /* Transición suave del zoom */
+}
+
+.zoom-container:hover .zoom-image {
+  transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+
+.experience h1 {
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  transform-origin: left; /* Cambia el origen del escalado al lado izquierdo */
+}
+
+.experience h1:hover {
+  transform: scale(1.1); /* Aumenta el tamaño hacia la derecha */
+  font-size: 2.5rem; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+.experience2 h1 {
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  transform-origin: right; /* Cambia el origen del escalado al lado izquierdo */
+}
+
+.experience2 h1:hover {
+  transform: scale(1.1); /* Aumenta el tamaño hacia la derecha */
+  font-size: 2.5rem; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
