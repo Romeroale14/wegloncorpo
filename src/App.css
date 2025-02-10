@@ -45,17 +45,18 @@
 
 .text2{
   letter-spacing: 0.15em; /* Más flexible y relativo al tamaño de la fuente */
-  font-size: 3.8rem;
+  font-size: 8vw;
 }
 .textt{
   letter-spacing: 0.28em; /* Más flexible y relativo al tamaño de la fuente */
-  margin-left: 5px;
+  margin-left: .6vw;
  
 }
 /* Reducir el interlineado */
 .banner p, .banner li, .banner h1, .banner h2 {
   line-height: .8; /* Valor menor para un interlineado más pequeño */
 }
+
 
 
 
@@ -174,15 +175,17 @@
 .xdxd, .scrolll,.videocert,.experience,.videocer,.experience2{
   margin-top: 200px;
 }
+.carrus{
+  margin-top: 300px;
+}
 
+/* ------------------------- ZOOMS AL PONER CURSOR---------------------------- */
 
-
-
-.zoom-image {
+.zoom-image,.menux.nav-link   {
   transition: transform 0.3s ease; /* Transición suave del zoom */
 }
 
-.zoom-container:hover .zoom-image {
+.zoom-container:hover .zoom-image ,.menux.nav-link:hover {
   transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el mouse */
 }
 
@@ -192,7 +195,7 @@
   transform-origin: left; /* Cambia el origen del escalado al lado izquierdo */
 }
 
-.experience h1:hover {
+.experience h1:hover, .experience2 h1:hover {
   transform: scale(1.1); /* Aumenta el tamaño hacia la derecha */
   font-size: 2.5rem; /* Ajusta el tamaño de la fuente si es necesario */
 }
@@ -202,8 +205,21 @@
   transform-origin: right; /* Cambia el origen del escalado al lado izquierdo */
 }
 
-.experience2 h1:hover {
-  transform: scale(1.1); /* Aumenta el tamaño hacia la derecha */
-  font-size: 2.5rem; /* Ajusta el tamaño de la fuente si es necesario */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
