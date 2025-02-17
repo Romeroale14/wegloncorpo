@@ -40,7 +40,7 @@
 /* -------------------------BANNER--------------------------------------------------- */
 /* CONTENEDOR PRINCIPAL BANNER */
 .banner{
-  margin: 30vh;
+  margin: 20vh;
 }
 
 .text2{
@@ -56,8 +56,6 @@
 .banner p, .banner li, .banner h1, .banner h2 {
   line-height: .8; /* Valor menor para un interlineado más pequeño */
 }
-
-
 
 
 /* ---------------------------MOVIMIENTO AVION------------------------- */
@@ -106,30 +104,14 @@
   
 }
 
-
-
-
 .letras{
   font-size: 20px;
 }
 .letras2{
   font-size: 10px;
 }
-.video-containerr {
-  margin-top: 20vh;
-  width: 100%; /* Contenedor ocupa todo el ancho */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000; /* Fondo opcional */
-}
 
-.video-full-width {
-  width: 100%; /* Video ocupa todo el ancho del contenedor */
-  height: auto; /* Mantiene la relación de aspecto */
-}
-
-
+/* --------------------CARRUSEL INFINITO-------------------------------------------------------- */
 .imgcarru{
   width: 150px;
   margin: 0 20px;
@@ -138,8 +120,7 @@
 } */
 
 
-
-.scrolll{
+.CarruselInfinito{
   position: relative;
   display: flex;
   width: 1200px;
@@ -148,7 +129,7 @@
   
 }
 
-.scrolll div{
+.CarruselInfinito div{
   margin-top: 100px;
   white-space: nowrap;
   animation: animate 50s linear infinite;
@@ -165,7 +146,7 @@
   }
 }
 
-.scrolll:hover div{
+.CarruselInfinito:hover div{
   animation-play-state: paused;
 }
 
@@ -204,14 +185,6 @@
   transition: transform 0.3s ease, font-size 0.3s ease;
   transform-origin: right; /* Cambia el origen del escalado al lado izquierdo */
 }
-
-
-
-
-
-
-
-
 
 
 

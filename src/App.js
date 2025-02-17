@@ -10,15 +10,24 @@ import video from './assets/video7.mp4';
 import weglon1 from './assets/weglon anterior.png';
 import weglon2 from './assets/weglon.png';
 import avion from './assets/avion.png';
-import japon from './assets/JAP.png';
+import CardExpjapon from './assets/cardsExp/JAP.png';
 import ban1 from './assets/banner1.png';
-import Nasa from '../src/assets/NASA1.png';
-import { Link } from "react-router-dom";
-import videxp from './assets/redes/videounido.mp4';
+import CardExpNasa from '../src/assets/cardsExp/NASA1.png';
+// import { Link } from "react-router-dom";
+import videoCert from './assets/redes/videounido.mp4';
 import Nav from './Componentes/navbar';
 import Footer from './Componentes/Footer';
-import canada from './assets/CANADA.png';
-import england from './assets/england.png';
+import cardExpcanada from './assets/cardsExp/CANADA.png';
+import cardExpengland from './assets/cardsExp/england.png';
+import ban2 from './assets/BANNER2.png'
+import cardAle from './assets/cardsCert/alemania card.png';
+import cardIngles from './assets/cardsCert/card england.png';
+import cardEspa from './assets/cardsCert/card ESPAÑOL.png';
+import cardItalia from './assets/cardsCert/card ITALIA.png';
+import cardChina from './assets/cardsCert/certificadochino.png';
+import cardFran from './assets/cardsCert/card FRANCIA.png';
+
+
 function App() {
   // Estado para controlar el mute del video
   const [isMuted, setIsMuted] = useState(true);
@@ -31,8 +40,7 @@ function App() {
     setIsMuted(true); // Activa el mute al quitar el cursor
   };
 
-  //menu desplegable
-  const [isOpen, setIsOpen] = useState(false);
+
   // Estado para manejar la lista de autores
   const [authors, setAuthors] = useState([]);
   const { getAuthors } = useContentful(); // Función para obtener autores desde Contentful
@@ -84,25 +92,33 @@ function App() {
       {/* -------------------------------NAVGEADOR------------------------------------ */}
       <Nav />
       {/* ---------------banner-------------------------------------------- */}
-      <div className='banner  ms-4'>
-        <div class="containerr ">
-          <div class="row">
-            <div class=" col-8">
-              <h1 className='text2 text-black'>EXPLORE THE WORLD</h1>
-              <h4 className='textt text-black '>MASTER LANGUAGES</h4>
-              <br />
-              <br />
-              <h5 className='text-black m-0 p-1 lh-sm fw-light'>At Weglon, we believe that language learning goes beyond the classroom.<br /> 
-              Our mission is to connect students with the world through immersive experiences that combine academic learning with real culture.</h5>
-            </div>
-
-            <div class="col d-flex justify-content-end ">
-              <img src={avion} alt="LOGO" className="logo3" />
-            </div>
-
-          </div>
-        </div>
+      <div className="banner ms-md-4 p-4">
+  <div className="container">
+    <div className="row align-items-center">
+      
+      {/* Columna de texto */}
+      <div className="col-12 col-md-8 text-start">
+        <h1 className="text2 text-black">EXPLORE THE WORLD</h1>
+        <h4 className="textt text-black">MASTER LANGUAGES</h4>
+        <br />
+        <h5 className="text-black m-0 p-1 lh-sm fw-light w-75 fs-6 text-wrap">
+          At Weglon, we believe that language learning goes beyond the classroom.
+          Our mission is to connect students with the world through immersive experiences 
+          that combine academic learning with real culture.
+        </h5>
       </div>
+
+      {/* Columna de imagen */}
+      <div className="col-12 col-md-4 d-flex justify-content-start justify-content-md-end mt-3 mt-md-0">
+        <img src={avion} alt="LOGO" className="logo3 img-fluid" />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 
       {/* ----------------------CARRUSEL--------------------------- */}
       <div id="carouselExampleControls" className="carrus carousel slide" data-bs-ride="carousel">
@@ -111,7 +127,7 @@ function App() {
             <img src={ban1} className="d-block w-100 h-100 img-fluid" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={ban1} className="d-block w-100 h-100 img-fluid" alt="..." />
+            <img src={ban2} className="d-block w-100 h-100 img-fluid" alt="..." />
           </div>
           <div className="carousel-item">
             <img src={ban1} className="d-block w-100 h-100 img-fluid" alt="..." />
@@ -137,50 +153,47 @@ function App() {
         <h6 className='me-3 text-end text-black'>PROGRAMS</h6>
       </div>
       {/* ---------------------- CARTAS EXPERIENCIAS-------------------------- */}
-      <div class="cartas">
-        <div class="row">
-          <div class="col">
-            <div className="card mt-2 " style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src={japon} className="card-img-top" alt="..." />
-              <div className="card-body ">
+      <div className="container mt-4 mb-5">
+        <div className="row g-4 justify-content-center">
+          <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={CardExpjapon} className="card-img-top" alt="Japan" />
+              <div className="card-body">
                 <h5 className="card-title">JAPAN</h5>
-                {/* <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a> */}
               </div>
             </div>
           </div>
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src={Nasa} className="card-img-top" alt="..." />
+
+          <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={CardExpNasa} className="card-img-top" alt="NASA" />
               <div className="card-body">
                 <h5 className="card-title">NASA</h5>
-                {/* <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a> */}
               </div>
             </div>
           </div>
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src={canada} className="card-img-top" alt="..." />
+
+          <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardExpcanada} className="card-img-top" alt="Canadian" />
               <div className="card-body">
-                <h5 className="card-title ">CANADIAN</h5>
-                {/* <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                <h5 className="card-title">CANADIAN</h5>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '10px', width: '17rem' }}>
-              <img src={england} className="card-img-top" alt="..." />
+
+          <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardExpengland} className="card-img-top" alt="London" />
               <div className="card-body">
                 <h5 className="card-title">LONDON</h5>
-                {/* <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a> */}
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
 
       {/* -----------------------VIDEO EXPERIENCE--------------------------- */}
       <div
@@ -189,7 +202,7 @@ function App() {
         onMouseLeave={handleMouseLeave} // Silencia al quitar el cursor
       >
         <ReactPlayer
-          url={videxp}
+          url={videoCert}
           playing={true} // Reproduce el video automáticamente
           controls={false} // Oculta los controles
           width="100%" // Ancho al 100% del contenedor
@@ -207,51 +220,65 @@ function App() {
         <h6 className='ms-4 text-start text-black'>PROGRAMS</h6>
       </div>
       {/* ---------------------------CARTAS CERTIFICATION-------------------------------------- */}
-      <div class="cartas">
-        <div class="row">
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src={avion} className="card-img-top" alt="..." />
+      <div className="container mt-4">
+        {/* Primera fila */}
+        <div className="row g-4 justify-content-center">
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardAle} className="card-img-top" alt="Japan" />
               <div className="card-body">
-                <h5 className="card-title">JAPAN</h5>
-                <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <h5 className="card-title">GERMAN</h5>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHhxOXU2eGt0dXM2b25jZmR3dmhtcmF2ZGRxYjhobzExYzRpanRkMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dVnzGW7UehcEpwLxBm/giphy.gif" className="card-img-top" alt="..." />
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardIngles} className="card-img-top" alt="NASA" />
               <div className="card-body">
-                <h5 className="card-title">NASA</h5>
-                <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <h5 className="card-title">ENGLISH</h5>
               </div>
             </div>
           </div>
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardEspa} className="card-img-top" alt="Canadian" />
+              <div className="card-body">
+                <h5 className="card-title">SPANISH</h5>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div class="col">
-            <div className="card bg-transparent border-0 mt-2" style={{ marginLeft: '15px', width: '17rem' }}>
-              <img src={avion} className="card-img-top" alt="..." />
+        {/* Segunda fila */}
+        <div className="row g-4 justify-content-center mt-3">
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardItalia} className="card-img-top" alt="Japan" />
               <div className="card-body">
-                <h5 className="card-title text-white">CANADIAN</h5>
-                <p className="card-text text-white">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <h5 className="card-title">ITALIAN</h5>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div className="card mt-2" style={{ marginLeft: '10px', width: '17rem' }}>
-              <img src={avion} className="card-img-top" alt="..." />
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardChina} className="card-img-top" alt="NASA" />
               <div className="card-body">
-                <h5 className="card-title">LONDON</h5>
-                <p className="card-text">Some quick example text to build on the card </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <h5 className="card-title">CHINESE</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-4 d-flex justify-content-center">
+            <div className="card" style={{ width: '17rem' }}>
+              <img src={cardFran} className="card-img-top" alt="Canadian" />
+              <div className="card-body">
+                <h5 className="card-title">FRENCH</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
       {/* --------------------------VIDEO CERITIFICATION--------------------------------- */}
       <div className="videocer video-containerr">
         <video width="640" height="360" controls>
@@ -260,7 +287,7 @@ function App() {
         </video>
       </div>
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
-      <div class="scrolll ">
+      <div class="CarruselInfinito">
         <div className='mb-5'>
           <img src={avion} alt="" className='imgcarru' />
           <img src={weglon1} alt="" className='imgcarru' />
