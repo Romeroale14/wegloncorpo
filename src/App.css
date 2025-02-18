@@ -36,80 +36,16 @@
   
 }
 
+/* --------------------BANNNER--------------------------------------------------- */
 
-/* -------------------------BANNER--------------------------------------------------- */
-/* CONTENEDOR PRINCIPAL BANNER */
-.banner{
-  margin: 20vh;
-}
-
-.text2{
-  letter-spacing: 0.15em; /* Más flexible y relativo al tamaño de la fuente */
-  font-size: 8vw;
-}
-.textt{
-  letter-spacing: 0.28em; /* Más flexible y relativo al tamaño de la fuente */
-  margin-left: .6vw;
- 
-}
-/* Reducir el interlineado */
-.banner p, .banner li, .banner h1, .banner h2 {
-  line-height: .8; /* Valor menor para un interlineado más pequeño */
+.banner-img {
+  width: 100%;         /* Ocupará todo el ancho disponible */
+  height: 100vh;       /* Ocupará toda la pantalla en altura */
+  object-fit: cover;   /* Ajusta la imagen para cubrir el div sin deformarse */
+  display: block;      /* Elimina espacios blancos extras */
 }
 
 
-/* ---------------------------MOVIMIENTO AVION------------------------- */
-/* AVION */
-.logo3{
-  width: 200px;
-  height: 200px;
-  animation-name: mianimacion;
-  position: relative;
-  animation-direction: 4s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  animation: fly 3s linear infinite; /* Repite la animación sin regresar */
-  position: relative;
-}
-
-@keyframes fly {
-  0% {
-    transform: translate(-350px, 60px); /* Posición inicial */
-  }
-  100% {
-    transform: translate(400px,-150px); /* Posición final */
-  }
-}
-
-
-/* -------------PANTALLA CHICAS PHONE---------------------------------- */
-@media (min-width: 375px) and (max-width: 670px) {
-  .logo{
-    width: 40px;
-    height: 30px;
-    
-  }
-  .logo2{
-    margin-top: -17px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .menux{
-    font-size: 8px !important;
-  }
-  .lista{
-    margin-top: 20px;
-  }
-  
-}
-
-.letras{
-  font-size: 20px;
-}
-.letras2{
-  font-size: 10px;
-}
 
 /* --------------------CARRUSEL INFINITO-------------------------------------------------------- */
 .imgcarru{
@@ -153,12 +89,10 @@
 
 
 /* espacios entre contenedores principales */
-.xdxd, .scrolll,.videocert,.experience,.videocer,.experience2{
-  margin-top: 200px;
+.xdxd, .scrolll,.videocert,.experience,.videocer,.experience2,.carrus,.video-containerr,.CarruselInfinito{
+  margin-top: 100px;
 }
-.carrus{
-  margin-top: 300px;
-}
+
 
 /* ------------------------- ZOOMS AL PONER CURSOR---------------------------- */
 
@@ -188,10 +122,69 @@
 
 
 
+@media (min-width: 671px) and (max-width: 900px) {
+  .textoBan1{
+    font-size: 60px !important;
+  }
+  .textoBan2{
+    font-size: 50px !important;
+  }
+  .textoBan3{
+    font-size: 10px !important;
+  }
+ 
+}
+
+@media (min-width: 901px) and (max-width: 2000px) {
+  .textoBan1{
+    font-size: 70px !important;
+  }
+  .textoBan2{
+    font-size: 60px !important;
+  }
+  .textoBan3{
+    font-size: 15px !important;
+  }
+ 
+}
 
 
+/* -------------PANTALLA CHICAS PHONE---------------------------------- */
+@media (min-width: 360px) and (max-width: 670px) {
+  .logo{
+    width: 40px;
+    height: 30px;
+    
+  }
+  .logo2{
+    margin-top: -17px;
+    width: 30px;
+    height: 30px;
+  }
 
+  .menux{
+    font-size: 8px !important;
+  }
+  .lista{
+    margin-top: 20px;
+  }
 
+  .textoBan1{
+    font-size: 25px !important;
+  }
+  .textoBan2{
+    font-size: 21px !important;
+  }
+  .textoBan3{
+    font-size: 8px !important;
+  }
+  .letras{
+    font-size: 14px;
+  }
+  .letras2{
+    font-size: 10px;
+  }
+}
 
 
 

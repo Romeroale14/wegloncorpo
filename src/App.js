@@ -10,6 +10,7 @@ import video from './assets/video7.mp4';
 import weglon1 from './assets/weglon anterior.png';
 import weglon2 from './assets/weglon.png';
 import avion from './assets/avion.png';
+import avion2 from './assets/banner.png';
 import CardExpjapon from './assets/cardsExp/JAP.png';
 import ban1 from './assets/banner1.png';
 import CardExpNasa from '../src/assets/cardsExp/NASA1.png';
@@ -92,32 +93,24 @@ function App() {
       {/* -------------------------------NAVGEADOR------------------------------------ */}
       <Nav />
       {/* ---------------banner-------------------------------------------- */}
-      <div className="banner ms-md-4 p-4">
-  <div className="container">
-    <div className="row align-items-center">
-      
-      {/* Columna de texto */}
-      <div className="col-12 col-md-8 text-start">
-        <h1 className="text2 text-black">EXPLORE THE WORLD</h1>
-        <h4 className="textt text-black">MASTER LANGUAGES</h4>
-        <br />
-        <h5 className="text-black m-0 p-1 lh-sm fw-light w-75 fs-6 text-wrap">
-          At Weglon, we believe that language learning goes beyond the classroom.
-          Our mission is to connect students with the world through immersive experiences 
-          that combine academic learning with real culture.
-        </h5>
+
+      <div className="container-fluid mt-5  p-0">
+        <div className="row position-relative">
+          {/* Contenedor de imagen */}
+          <div className="col-12 p-0">
+            <img src={avion2} className="img-fluid banner-img" alt="Fondo" />
+          </div>
+
+          {/* Texto sobre la imagen */}
+          <div className="col-8 position-absolute top-50 start-0 translate-middle-y ms-5  ">
+            <h1 className="textoBan1 fw-bold text-black  ">EXPLORE THE WORLD</h1>
+            <h2 className="textoBan2 fw-bold text-black"> MASTER LANGUAGES</h2>
+            <p className='textoBan3 text-black'>At Weglon, we believe that language learning goes beyond the classroom. <br />
+              Our mission is to connect students with the world through immersive experiences <br />
+              that combine academic learning with real culture.</p>
+          </div>
+        </div>
       </div>
-
-      {/* Columna de imagen */}
-      <div className="col-12 col-md-4 d-flex justify-content-start justify-content-md-end mt-3 mt-md-0">
-        <img src={avion} alt="LOGO" className="logo3 img-fluid" />
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
 
 
       {/* ----------------------CARRUSEL--------------------------- */}
@@ -143,7 +136,6 @@ function App() {
         </button>
       </div>
 
-
       {/* ----------------------EXPERIENCE--------------------------- */}
 
       <div className='experience2 col d-flex flex-column'>
@@ -153,7 +145,7 @@ function App() {
         <h6 className='me-3 text-end text-black'>PROGRAMS</h6>
       </div>
       {/* ---------------------- CARTAS EXPERIENCIAS-------------------------- */}
-      <div className="container mt-4 mb-5">
+      <div className="container mt-4 ">
         <div className="row g-4 justify-content-center">
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
             <div className="card" style={{ width: '17rem' }}>
@@ -192,8 +184,6 @@ function App() {
           </div>
         </div>
       </div>
-
-
 
       {/* -----------------------VIDEO EXPERIENCE--------------------------- */}
       <div
@@ -278,7 +268,6 @@ function App() {
         </div>
       </div>
 
-
       {/* --------------------------VIDEO CERITIFICATION--------------------------------- */}
       <div className="videocer video-containerr">
         <video width="640" height="360" controls>
@@ -288,7 +277,7 @@ function App() {
       </div>
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
       <div class="CarruselInfinito">
-        <div className='mb-5'>
+        <div className=''>
           <img src={avion} alt="" className='imgcarru' />
           <img src={weglon1} alt="" className='imgcarru' />
           <img src={weglon2} alt="" className='imgcarru' />
