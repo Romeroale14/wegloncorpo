@@ -14,7 +14,7 @@ import avion2 from './assets/banner.png';
 import CardExpjapon from './assets/cardsExp/JAP.png';
 import ban1 from './assets/banner1.png';
 import CardExpNasa from '../src/assets/cardsExp/NASA1.png';
-import videoCert from './assets/redes/videounido2.mp4';
+import videoCert from './assets/redes/videounido.mp4';
 import cardExpcanada from './assets/cardsExp/CANADA.png';
 import cardExpengland from './assets/cardsExp/england.png';
 import ban2 from './assets/BANNER2.png'
