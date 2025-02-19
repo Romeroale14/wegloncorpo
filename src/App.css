@@ -90,7 +90,7 @@
 
 /* espacios entre contenedores principales */
 .xdxd, .scrolll,.videocert,.experience,.videocer,.experience2,.carrus,.video-containerr,.CarruselInfinito{
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 
@@ -129,6 +129,12 @@
   .textoBan2{
     font-size: 50px !important;
   }
+  .textoBan11{
+    font-size: 50px !important;
+  }
+  .textoBan22{
+    font-size: 40px !important;
+  }
   .textoBan3{
     font-size: 10px !important;
   }
@@ -147,6 +153,12 @@
   }
   .textoBan3{
     font-size: 15px !important;
+  }
+  .textoBan11{
+    font-size: 60px !important;
+  }
+  .textoBan22{
+    font-size: 50px !important;
   }
   
   .letras21{

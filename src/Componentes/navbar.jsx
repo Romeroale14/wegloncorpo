@@ -18,10 +18,10 @@ const Navbar = () => {
 
                 <div className="xd col d-flex justify-content-center align-items-center">
                     <ul className="lista list-unstyled d-flex justify-content-between">
-                        <li className="mx-3">
-                            <li className="nav-item dropdown position-relative">
+                       
+                            <li className="mx-3 nav-item dropdown position-relative">
                                 {/* Botón para abrir/cerrar el menú */}
-                                <a className="menux nav-link active text-black" onClick={() => setIsOpen(!isOpen)}>OUR SERVICES</a>
+                                <a className="menux nav-link active text-black fw-bold" onClick={() => setIsOpen(!isOpen)}>OUR SERVICES</a>
 
                                 {/* Menú desplegable */}
                                 {isOpen && (
@@ -34,13 +34,13 @@ const Navbar = () => {
                                         </Link>
                                     </div>
                                 )}
-                            </li>
+                            
                         </li>
                         <li className="mx-3">
-                            <a className="menux nav-link active text-black" aria-current="page" href="#">ABOUT</a>
+                            <a className="menux nav-link active text-black fw-bold" aria-current="page" href="#">ABOUT</a>
                         </li>
                         <li className="mx-3">
-                            <Link className="menux nav-link active text-black" to="/about">CONTACTO</Link>
+                            <Link className="menux nav-link active text-black fw-bold" to="/about">CONTACTO</Link>
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-
+//librerias
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import ReactPlayer from 'react-player';
@@ -6,18 +6,15 @@ import useContentful from './useContentful';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ClipLoader } from 'react-spinners';
+import { Link } from "react-router-dom";
+
+//media
 import video from './assets/video7.mp4';
-import weglon1 from './assets/weglon anterior.png';
-import weglon2 from './assets/weglon.png';
-import avion from './assets/avion.png';
 import avion2 from './assets/banner.png';
 import CardExpjapon from './assets/cardsExp/JAP.png';
 import ban1 from './assets/banner1.png';
 import CardExpNasa from '../src/assets/cardsExp/NASA1.png';
-// import { Link } from "react-router-dom";
-import videoCert from './assets/redes/videounido.mp4';
-import Nav from './Componentes/navbar';
-import Footer from './Componentes/Footer';
+import videoCert from './assets/redes/videounido2.mp4';
 import cardExpcanada from './assets/cardsExp/CANADA.png';
 import cardExpengland from './assets/cardsExp/england.png';
 import ban2 from './assets/BANNER2.png'
@@ -27,6 +24,11 @@ import cardEspa from './assets/cardsCert/card ESPAÑOL.png';
 import cardItalia from './assets/cardsCert/card ITALIA.png';
 import cardChina from './assets/cardsCert/certificadochino.png';
 import cardFran from './assets/cardsCert/card FRANCIA.png';
+
+//componentes
+import Nav from './Componentes/navbar';
+import Footer from './Componentes/Footer';
+import CarrInf from './Componentes/carruselInf';
 
 
 function App() {
@@ -41,50 +43,6 @@ function App() {
     setIsMuted(true); // Activa el mute al quitar el cursor
   };
 
-
-  // Estado para manejar la lista de autores
-  const [authors, setAuthors] = useState([]);
-  const { getAuthors } = useContentful(); // Función para obtener autores desde Contentful
-  const [loading, setLoading] = useState(true); // Indicador de carga
-  const [error, setError] = useState(null); // Manejo de errores
-
-  // Hook de efecto para cargar datos
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true); // Inicia el estado de carga
-        const response = await getAuthors(); // Obtiene autores desde Contentful
-        setAuthors(response || []); // Asigna los datos al estado, o un arreglo vacío si la respuesta es nula
-      } catch (err) {
-        setError('Error al cargar los autores'); // Maneja errores
-      } finally {
-        setLoading(false); // Finaliza la carga
-      }
-    };
-
-    // Evita volver a cargar los datos si ya se han obtenido
-    if (authors.length === 0) {
-      fetchData();
-    }
-  }, [getAuthors, authors.length]); // Dependencias: solo ejecuta el efecto cuando cambien
-
-  // Muestra el indicador de carga si `loading` es verdadero
-  if (loading) {
-    return (
-      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-        <ClipLoader color="#007bff" loading={loading} size={75} />
-      </div>
-    );
-  }
-
-  // Muestra el mensaje de error si hay algún problema
-  if (error) {
-    return (
-      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-        <span>{error}</span>
-      </div>
-    );
-  }
 
   // Contenido principal
   return (
@@ -143,8 +101,7 @@ function App() {
       {/* ----------------------EXPERIENCE--------------------------- */}
 
       <div className='experience2 col d-flex flex-column'>
-        <a href="" class="text-decoration-none">
-          <h1 className='mt-5 me-3 text-end text-black'>WEGLON EXPERIENCE</h1></a>
+        <Link className="text-decoration-none" to="/about"><h1 className=' me-3 text-end text-black'>WEGLON EXPERIENCE</h1></Link>
         <h6 className='me-3 text-end text-black'>EDUCATIONAL</h6>
         <h6 className='me-3 text-end text-black'>PROGRAMS</h6>
       </div>
@@ -207,9 +164,9 @@ function App() {
         />
       </div>
       {/* -----------------------LETRAS CERTIFICATION------------------------------------- */}
-      <div className='experience col d-flex flex-column '>
-        <a href="" class="text-decoration-none">
-          <h1 className='mt-5 ms-3 text-start text-black'>WEGLON CERTIFICATION</h1></a>
+      <div className='experience col d-flex flex-column'>
+        <a href="" className="text-decoration-none">
+          <h1 className=' ms-3 text-start text-black'>WEGLON CERTIFICATION</h1></a>
         <h6 className='ms-4 text-start text-black'>EDUCATIONAL</h6>
         <h6 className='ms-4 text-start text-black'>PROGRAMS</h6>
       </div>
@@ -280,26 +237,9 @@ function App() {
         </video>
       </div>
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
-      <div class="CarruselInfinito">
-      {authors.length > 0 &&
-            authors.map((author, index) => (
-        <div className=''>
-          <img src={author.Carr1} alt="" className='imgcarru' />
-          <img src={avion} alt="" className='imgcarru' />
-          <img src={weglon1} alt="" className='imgcarru' />
-          <img src={weglon2} alt="" className='imgcarru' />
-          <img src={avion} alt="" className='imgcarru' />
-          <img src={weglon1} alt="" className='imgcarru' />
-          <img src={weglon2} alt="" className='imgcarru' />
-          <img src={avion} alt="" className='imgcarru' />
-          <img src={weglon1} alt="" className='imgcarru' />
-          <img src={weglon2} alt="" className='imgcarru' />
-
-          
-        </div>))}
-      </div>
-
+      <CarrInf />
       {/* ----------------------------------------FOOTER----------------------------- */}
+
       <Footer />
     </div>
   );
