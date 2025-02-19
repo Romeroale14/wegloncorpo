@@ -132,6 +132,9 @@
   .textoBan3{
     font-size: 10px !important;
   }
+  .letras21{
+    font-size: 15px;
+  }
  
 }
 
@@ -145,7 +148,10 @@
   .textoBan3{
     font-size: 15px !important;
   }
- 
+  
+  .letras21{
+    font-size: 18px;
+  }
 }
 
 
@@ -182,6 +188,9 @@
     font-size: 14px;
   }
   .letras2{
+    font-size: 10px;
+  }
+  .letras21{
     font-size: 10px;
   }
 }

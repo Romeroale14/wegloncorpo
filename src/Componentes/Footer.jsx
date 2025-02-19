@@ -35,7 +35,7 @@ const Footer = () => {
       <div class="bg-dark col-4 text-white d-flex ">
         <img src={ubi} alt="LOGO" className="logo5 mt-3 " />
 
-        <h4 class="letras2 mt-5"><a href=""></a>San Gaspar 20B <br />
+        <h4 class="letras21 mt-5"><a href=""></a>San Gaspar 20B <br />
           Fraccionamiento Pedregal de las Fuentes <br />
           Jiutepec Morelos <br />
           C.P. 62554, México</h4>

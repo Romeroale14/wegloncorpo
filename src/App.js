@@ -100,6 +100,10 @@ function App() {
           <div className="col-12 p-0">
             <img src={avion2} className="img-fluid banner-img" alt="Fondo" />
           </div>
+          {/* <div className='posicionlogo'>{authors.length > 0 &&
+            authors.map((author, index) => (
+              <img src={author.ItaliaCarr1} className='navimg2' alt="Chino" />))}
+          </div> */}
 
           {/* Texto sobre la imagen */}
           <div className="col-8 position-absolute top-50 start-0 translate-middle-y ms-5  ">
@@ -277,7 +281,10 @@ function App() {
       </div>
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
       <div class="CarruselInfinito">
+      {authors.length > 0 &&
+            authors.map((author, index) => (
         <div className=''>
+          <img src={author.Carr1} alt="" className='imgcarru' />
           <img src={avion} alt="" className='imgcarru' />
           <img src={weglon1} alt="" className='imgcarru' />
           <img src={weglon2} alt="" className='imgcarru' />
@@ -288,7 +295,8 @@ function App() {
           <img src={weglon1} alt="" className='imgcarru' />
           <img src={weglon2} alt="" className='imgcarru' />
 
-        </div>
+          
+        </div>))}
       </div>
 
       {/* ----------------------------------------FOOTER----------------------------- */}
