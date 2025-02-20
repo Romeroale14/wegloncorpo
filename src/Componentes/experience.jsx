@@ -10,7 +10,7 @@ import avion2 from '../assets/bannerr.png';
 import '../Componentes/experience.css';
 import Footer from './Footer';
 import CarrInf from './carruselInf';
-import videoCert from '../assets/redes/videounido.mp4';
+import videoCert from '../assets/redes/Download.mp4';
 import { Link } from "react-router-dom";
 import videocard from '../assets/testimonios/0220 (1).mp4';
 
