@@ -32,6 +32,11 @@ import CarrInf from './Componentes/carruselInf';
 
 
 function App() {
+  const [authors, setAuthors] = useState([]);
+  const { getAuthors } = useContentful(); // Función para obtener autores desde Contentful
+  const [loading, setLoading] = useState(true); // Indicador de carga
+  const [error, setError] = useState(null); // Manejo de errores
+
   // Estado para controlar el mute del video
   const [isMuted, setIsMuted] = useState(true);
 
@@ -42,7 +47,43 @@ function App() {
   const handleMouseLeave = () => {
     setIsMuted(true); // Activa el mute al quitar el cursor
   };
+// Hook de efecto para cargar datos
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true); // Inicia el estado de carga
+        const response = await getAuthors(); // Obtiene autores desde Contentful
+        setAuthors(response || []); // Asigna los datos al estado, o un arreglo vacío si la respuesta es nula
+      } catch (err) {
+        setError('Error al cargar los autores'); // Maneja errores
+      } finally {
+        setLoading(false); // Finaliza la carga
+      }
+    };
 
+    // Evita volver a cargar los datos si ya se han obtenido
+    if (authors.length === 0) {
+      fetchData();
+    }
+  }, [getAuthors, authors.length]); // Dependencias: solo ejecuta el efecto cuando cambien
+
+  // Muestra el indicador de carga si `loading` es verdadero
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+        <ClipLoader color="#007bff" loading={loading} size={75} />
+      </div>
+    );
+  }
+
+  // Muestra el mensaje de error si hay algún problema
+  if (error) {
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+        <span>{error}</span>
+      </div>
+    );
+  }
 
   // Contenido principal
   return (
@@ -152,8 +193,10 @@ function App() {
         onMouseEnter={handleMouseEnter} // Activa audio al pasar el cursor
         onMouseLeave={handleMouseLeave} // Silencia al quitar el cursor
       >
+        {authors.length > 0 &&
+          authors.map((author, index) => (
         <ReactPlayer
-          url={videoCert}
+          url={author.videoExp}
           playing={true} // Reproduce el video automáticamente
           controls={false} // Oculta los controles
           width="100%" // Ancho al 100% del contenedor
@@ -161,7 +204,7 @@ function App() {
           muted={isMuted} // Controla el mute basado en el estado
           loop={true} // Opcional: hace que el video se repita cuando termine
           playsinline={true} // Reproduce el video en línea (sin pantalla completa)
-        />
+        />))}
       </div>
       {/* -----------------------LETRAS CERTIFICATION------------------------------------- */}
       <div className='experience col d-flex flex-column'>

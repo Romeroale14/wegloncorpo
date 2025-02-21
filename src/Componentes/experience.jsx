@@ -124,7 +124,7 @@ const Experience = () => {
         <div className="row g-4 justify-content-center">
 
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-            <div className="card" style={{ width: '17rem' }}>
+            <div className="card" style={{ width: '14rem' }}>
               <video className="card-img-top" autoPlay loop muted playsInline>
                 <source src={videocard} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -135,7 +135,7 @@ const Experience = () => {
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-            <div className="card" style={{ width: '17rem' }}>
+            <div className="card" style={{ width: '14rem' }}>
               <video className="card-img-top" autoPlay loop muted playsInline>
                 <source src={videocard} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -147,7 +147,7 @@ const Experience = () => {
           </div>
 
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-            <div className="card" style={{ width: '17rem' }}>
+            <div className="card" style={{ width: '14rem' }}>
               <video className="card-img-top" autoPlay loop muted playsInline>
                 <source src={videocard} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -158,7 +158,7 @@ const Experience = () => {
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-            <div className="card" style={{ width: '17rem' }}>
+            <div className="card" style={{ width: '14rem' }}>
               <video className="card-img-top" autoPlay loop muted playsInline>
                 <source src={videocard} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -183,7 +183,8 @@ const Experience = () => {
           className="position-relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-        >
+        >{authors.length > 0 &&
+          authors.map((author, index) => (
           <video
             ref={videoRef}
             className="card-img-top"
@@ -192,7 +193,7 @@ const Experience = () => {
             loop
             playsInline
             preload="auto"
-          ></video>
+          ></video>))}
           {/* 🔹 Botón para mutear o desmutear */}
           <button
             className="btn btn-secondary position-absolute top-0 start-0 m-2"
@@ -206,6 +207,11 @@ const Experience = () => {
         </div>
       </div>
     </div>
+
+
+
+
+    
       {/* ----------------------------------CARRUSEL INFINITO------------------------------------------------------- */}
       <CarrInf />
 

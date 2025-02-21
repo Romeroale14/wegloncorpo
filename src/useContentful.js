@@ -109,6 +109,9 @@ const useContentful = () => {
         const Carr30 = item.fields.carr30?.fields?.file?.url
         ? `https:${item.fields.carr30.fields.file.url}`
         : ""; // Asegura que la URL tenga protocolo
+        const videoExp = item.fields.videoExp?.fields?.file?.url
+        ? `https:${item.fields.videoExp.fields.file.url}`
+        : ""; // Asegura que la URL tenga protocolo
 
 
 
@@ -147,6 +150,7 @@ const useContentful = () => {
           Carr28: Carr28,
           Carr29: Carr29,
           Carr30: Carr30,
+          videoExp: videoExp,
 
 
           // videoRep: videoRepUrl,
