@@ -1,5 +1,5 @@
 //librerias
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ReactPlayer from 'react-player';
 import useContentful from './useContentful';
@@ -32,22 +32,47 @@ import CarrInf from './Componentes/carruselInf';
 
 
 function App() {
+
   const [authors, setAuthors] = useState([]);
   const { getAuthors } = useContentful(); // Función para obtener autores desde Contentful
   const [loading, setLoading] = useState(true); // Indicador de carga
   const [error, setError] = useState(null); // Manejo de errores
 
-  // Estado para controlar el mute del video
+  const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
 
+  // 🔹 Función para reproducir el video al pasar el cursor
   const handleMouseEnter = () => {
-    setIsMuted(false); // Desactiva el mute al pasar el cursor
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current
+        .play()
+        .catch(error => console.log("Error al reproducir:", error));
+    }
   };
 
+  // 🔹 Función para pausar el video al quitar el cursor
   const handleMouseLeave = () => {
-    setIsMuted(true); // Activa el mute al quitar el cursor
+    if (videoRef.current && !videoRef.current.paused) {
+      videoRef.current.pause();
+    }
   };
-// Hook de efecto para cargar datos
+
+  // 🔹 Función para mutear o desmutear el video sin afectar la reproducción
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  // 🔹 useEffect para asegurar que el video se prepara correctamente
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.preload = "auto";
+    }
+  }, []);
+
+  // Hook de efecto para cargar datos
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -147,7 +172,7 @@ function App() {
         <h6 className='me-3 text-end text-black'>PROGRAMS</h6>
       </div>
       {/* ---------------------- CARTAS EXPERIENCIAS-------------------------- */}
-      <div className="container mt-4 ">
+      <div className="containerr mt-4 ">
         <div className="row g-4 justify-content-center">
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
             <div className="card" style={{ width: '17rem' }}>
@@ -188,23 +213,29 @@ function App() {
       </div>
 
       {/* -----------------------VIDEO EXPERIENCE--------------------------- */}
+
       <div
-        className="video-containerr"
-        onMouseEnter={handleMouseEnter} // Activa audio al pasar el cursor
-        onMouseLeave={handleMouseLeave} // Silencia al quitar el cursor
+        className="video-containerr position-relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        {authors.length > 0 &&
-          authors.map((author, index) => (
-        <ReactPlayer
-          url={author.videoExp}
-          playing={true} // Reproduce el video automáticamente
-          controls={false} // Oculta los controles
-          width="100%" // Ancho al 100% del contenedor
-          height="110%" // Alto al 100% del contenedor
-          muted={isMuted} // Controla el mute basado en el estado
-          loop={true} // Opcional: hace que el video se repita cuando termine
-          playsinline={true} // Reproduce el video en línea (sin pantalla completa)
-        />))}
+        <video
+          ref={videoRef}
+          className="video-element"
+          src={videoCert}
+          muted={isMuted}
+          loop
+          playsInline
+          preload="auto"
+          style={{ width: "100%", borderRadius: "10px" }} // Ajuste visual opcional
+        />
+        <button
+          className="btn btn-secondary position-absolute top-0 start-0 m-2"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
       </div>
       {/* -----------------------LETRAS CERTIFICATION------------------------------------- */}
       <div className='experience col d-flex flex-column'>
@@ -214,7 +245,7 @@ function App() {
         <h6 className='ms-4 text-start text-black'>PROGRAMS</h6>
       </div>
       {/* ---------------------------CARTAS CERTIFICATION-------------------------------------- */}
-      <div className="container mt-4">
+      <div className="containerr mt-4">
         {/* Primera fila */}
         <div className="row g-4 justify-content-center">
           <div className="col-12 col-md-4 d-flex justify-content-center">
@@ -244,7 +275,7 @@ function App() {
         </div>
 
         {/* Segunda fila */}
-        <div className="row g-4 justify-content-center mt-3">
+        <div className="row g-4 justify-content-center mt-5">
           <div className="col-12 col-md-4 d-flex justify-content-center">
             <div className="card" style={{ width: '17rem' }}>
               <img src={cardItalia} className="card-img-top" alt="Japan" />
@@ -273,11 +304,28 @@ function App() {
       </div>
 
       {/* --------------------------VIDEO CERITIFICATION--------------------------------- */}
-      <div className="videocer video-containerr">
-        <video width="640" height="360" controls>
-          <source src="https://www.youtube.com/watch?v=ag7Vj3f7yMk" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div
+        className="video-containerr position-relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <video
+          ref={videoRef}
+          className="video-element"
+          src={videoCert}
+          muted={isMuted}
+          loop
+          playsInline
+          preload="auto"
+          style={{ width: "100%", borderRadius: "10px" }} // Ajuste visual opcional
+        />
+        <button
+          className="btn btn-secondary position-absolute top-0 start-0 m-2"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
       </div>
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
       <CarrInf />

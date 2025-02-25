@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from "react-player";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './experience.css';
 import { useRef } from "react";
 
 import Nav from './navbar';
@@ -10,7 +11,7 @@ import avion2 from '../assets/bannerr.png';
 import '../Componentes/experience.css';
 import Footer from './Footer';
 import CarrInf from './carruselInf';
-import videoCert from '../assets/redes/Download.mp4';
+import videoCert from '../assets/redes/bien.mp4';
 import { Link } from "react-router-dom";
 import videocard from '../assets/testimonios/0220 (1).mp4';
 
@@ -18,7 +19,7 @@ import videocard from '../assets/testimonios/0220 (1).mp4';
 const Experience = () => {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
-  
+
   // 🔹 Función para reproducir el video al pasar el cursor
   const handleMouseEnter = () => {
     if (videoRef.current && videoRef.current.paused) {
@@ -53,10 +54,11 @@ const Experience = () => {
 
   return (
 
-    <div className="app-container">
+    <div className="app-container ">
       <video autoPlay loop muted className="background-video"><source src={video} type="video/mp4" /></video>
+      {/* ---------------------NAVBAR---------------------------------------- */}
       <Nav />
-
+      {/* -------------------------------BANNER------------------------------------------------------ */}
       <div className="container-fluid p-0">
         <div className="row position-relative">
           {/* Contenedor de imagen */}
@@ -73,8 +75,34 @@ const Experience = () => {
         </div>
       </div>
 
+
+      {/* -----------------------------VIDEO-------------------------------------------------------- */}
+      <div
+        className="video-container position-relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <video
+          ref={videoRef}
+          className="video-element"
+          src={videoCert}
+          muted={isMuted}
+          loop
+          playsInline
+          preload="auto"
+          style={{ width: "100%", borderRadius: "10px" }} // Ajuste visual opcional
+        />
+        <button
+          className="btn btn-secondary position-absolute top-0 start-0 m-2"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
+      </div>
+
       {/* ---------------------------------------TESTIMONIOOOOOS--------------------------------------------------------------- */}
-      <div className="container mt-4">
+      <div className="containerCardTest ">
         {/* Primera fila */}
         <h1 className="textoBan22 fw-bold text-black text-center">TESTIMONIALS</h1>
 
@@ -111,7 +139,7 @@ const Experience = () => {
                 Not only did I improve my
                 English skills.</p>
               <h6 className='m-4'>Participant: Jessica Garcia <br />
-                Destination: Houston,Texas <br />
+                Destination: Houston, Texas <br />
                 Date: July 2024</h6>
             </div>
           </div>
@@ -119,8 +147,9 @@ const Experience = () => {
         </div>
       </div>
 
+
       {/* ----------------------------------------CARD TESTIMONIOS------------------------------------------------------------ */}
-      <div className="container mt-5 ">
+      <div className="containerCardTestVid ">
         <div className="row g-4 justify-content-center">
 
           <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
@@ -174,17 +203,16 @@ const Experience = () => {
       </div>
 
 
-      
 
 
-      <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+      {/* 
+      <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-5">
       <div className="card" style={{ width: "17rem" }}>
         <div
           className="position-relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-        >{authors.length > 0 &&
-          authors.map((author, index) => (
+        >
           <video
             ref={videoRef}
             className="card-img-top"
@@ -193,8 +221,8 @@ const Experience = () => {
             loop
             playsInline
             preload="auto"
-          ></video>))}
-          {/* 🔹 Botón para mutear o desmutear */}
+          ></video>
+         
           <button
             className="btn btn-secondary position-absolute top-0 start-0 m-2"
             onClick={toggleMute}
@@ -206,12 +234,13 @@ const Experience = () => {
           <h5 className="card-title">NASA</h5>
         </div>
       </div>
-    </div>
+    </div> */}
 
 
 
 
-    
+
+
       {/* ----------------------------------CARRUSEL INFINITO------------------------------------------------------- */}
       <CarrInf />
 
