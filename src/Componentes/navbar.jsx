@@ -10,18 +10,18 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="containerr text-center">
+        <div className=" text-center">
             <div className="row">
-                <div className="xd col d-flex align-items-center ms-3 zoom-container">
+                <div className=" col d-flex align-items-center ms-3 zoom-container">
                 <Link to="/" className=""> <img src={weglon1} alt="LOGO" className="logo2 zoom-image" />  </Link>
                 </div>
 
-                <div className="xd col d-flex justify-content-center align-items-center">
+                <div className="col d-flex justify-content-center align-items-center">
                     <ul className="lista list-unstyled d-flex justify-content-between">
                        
                             <li className="mx-3 nav-item dropdown position-relative">
                                 {/* Botón para abrir/cerrar el menú */}
-                                <a className="menux nav-link active text-black fw-bold" onClick={() => setIsOpen(!isOpen)}>OUR SERVICES</a>
+                                <a className="menu nav-link active text-black fw-bold" onClick={() => setIsOpen(!isOpen)}>OUR SERVICES</a>
 
                                 {/* Menú desplegable */}
                                 {isOpen && (
@@ -45,7 +45,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="xd col d-flex justify-content-end align-items-center me-3 mt-3 zoom-container">
+                <div className="col d-flex justify-content-end align-items-center me-3 mt-3 zoom-container">
                     <Link to="/" className=""> <img src={weglon2} alt="LOGO" className="logo2 zoom-image" />  </Link>
 
                 </div>

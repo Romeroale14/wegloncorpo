@@ -1,21 +1,7 @@
 /* -------------------------BANNER--------------------------------------------------- */
 /* CONTENEDOR PRINCIPAL BANNER */
 
-  .text21{
-    letter-spacing: 0.15em; /* Más flexible y relativo al tamaño de la fuente */
-    font-size: 5.2vw;
-  }
-  .textt1{
-    letter-spacing: 0.28em; /* Más flexible y relativo al tamaño de la fuente */
-    margin-left: .6vw;
-   
-  }
-  .textt12{
-    letter-spacing: 0.28em; /* Más flexible y relativo al tamaño de la fuente */
-    margin-left: .6vw;
-    font-size: 1.4vw;
-   
-  }
+  
   /* Reducir el interlineado */
  /* ---------------------------------NAV--------------------------------------- */
  

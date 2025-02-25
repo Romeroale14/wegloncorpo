@@ -37,7 +37,6 @@ function App() {
   const { getAuthors } = useContentful(); // Función para obtener autores desde Contentful
   const [loading, setLoading] = useState(true); // Indicador de carga
   const [error, setError] = useState(null); // Manejo de errores
-
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -165,12 +164,12 @@ function App() {
       </div>
 
       {/* ----------------------EXPERIENCE--------------------------- */}
-
       <div className='experience2 col d-flex flex-column'>
         <Link className="text-decoration-none" to="/about"><h1 className=' me-3 text-end text-black'>WEGLON EXPERIENCE</h1></Link>
         <h6 className='me-3 text-end text-black'>EDUCATIONAL</h6>
         <h6 className='me-3 text-end text-black'>PROGRAMS</h6>
       </div>
+
       {/* ---------------------- CARTAS EXPERIENCIAS-------------------------- */}
       <div className="containerr mt-4 ">
         <div className="row g-4 justify-content-center">
@@ -213,7 +212,6 @@ function App() {
       </div>
 
       {/* -----------------------VIDEO EXPERIENCE--------------------------- */}
-
       <div
         className="video-containerr position-relative"
         onMouseEnter={handleMouseEnter}
@@ -237,6 +235,7 @@ function App() {
           {isMuted ? "🔇" : "🔊"}
         </button>
       </div>
+
       {/* -----------------------LETRAS CERTIFICATION------------------------------------- */}
       <div className='experience col d-flex flex-column'>
         <a href="" className="text-decoration-none">
@@ -244,6 +243,7 @@ function App() {
         <h6 className='ms-4 text-start text-black'>EDUCATIONAL</h6>
         <h6 className='ms-4 text-start text-black'>PROGRAMS</h6>
       </div>
+
       {/* ---------------------------CARTAS CERTIFICATION-------------------------------------- */}
       <div className="containerr mt-4">
         {/* Primera fila */}
@@ -327,11 +327,13 @@ function App() {
           {isMuted ? "🔇" : "🔊"}
         </button>
       </div>
+
       {/* ------------------------------CARRUESEL INFINITO---------------------------------------- */}
       <CarrInf />
-      {/* ----------------------------------------FOOTER----------------------------- */}
 
+      {/* ----------------------------------------FOOTER----------------------------- */}
       <Footer />
+
     </div>
   );
 }
