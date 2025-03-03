@@ -30,7 +30,7 @@ const Navbar = () => {
                                             Weglon experince
                                         </Link>
                                         <Link to="/another-action" className="dropdown-item">
-                                            Weglon certificartion
+                                            Weglon certificartionn
                                         </Link>
                                     </div>
                                 )}
