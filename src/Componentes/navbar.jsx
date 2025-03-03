@@ -1,7 +1,7 @@
 import weglon2 from '../assets/weglon.png';
 import weglon1 from '../assets/weglon anterior.png';
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 

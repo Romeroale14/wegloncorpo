@@ -1,18 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import ReactPlayer from "react-player";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './experience.css';
+
 import { useRef } from "react";
 
 import Nav from './navbar';
 import video from '../assets/video7.mp4';
 import avion2 from '../assets/bannerr.png';
-import '../Componentes/experience.css';
+
 import Footer from './Footer';
 import CarrInf from './carruselInf';
 import videoCert from '../assets/redes/bien.mp4';
-import { Link } from "react-router-dom";
+
 import videocard from '../assets/testimonios/0220 (1).mp4';
 
 

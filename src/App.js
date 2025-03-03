@@ -1,7 +1,7 @@
 //librerias
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import ReactPlayer from 'react-player';
+
 import useContentful from './useContentful';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
