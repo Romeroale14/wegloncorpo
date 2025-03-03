@@ -130,7 +130,7 @@ function App() {
 
           {/* Texto sobre la imagen */}
           <div className="col-8 position-absolute top-50 start-0 translate-middle-y ms-5  ">
-            <h1 className="textoBan1 fw-bold text-black  ">EXPLORE THE WORLD</h1>
+            <h1 className="textoBan1 fw-bold text-black  ">EXPLORE THE WORLD ALEXIS</h1>
             <h2 className="textoBan2 fw-bold text-black"> MASTER LANGUAGES</h2>
             <p className='textoBan3 text-black'>At Weglon, we believe that language learning goes beyond the classroom. <br />
               Our mission is to connect students with the world through immersive experiences <br />
